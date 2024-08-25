@@ -1,6 +1,7 @@
 module com.example.carwash {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
     opens com.example.carwash to javafx.fxml;
     exports com.example.carwash;
