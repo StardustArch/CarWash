@@ -7,6 +7,8 @@ public class Usuario {
     private String senha;
     private String tipoUsuario; // empresarial ou singular
 
+    public Usuario() {}
+
     public Usuario(int id, String nome, String email, String senha, String tipoUsuario) {
         this.id = id;
         this.nome = nome;
