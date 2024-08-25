@@ -53,19 +53,33 @@ public class LogInController {
     }
 
     @FXML
-    private void logIn() {
-        String nomeUsuario = nomeUsuarioField.getText();
+    private void logIn() throws SQLException {
+        String email = nomeUsuarioField.getText();
         String senha = senhaField.getText();
 
-        if (verificarCredenciais(nomeUsuario, senha)) {
-            exibirMensagem("Login bem-sucedido!", "Você está logado.");
-            if (eEmpresarial()) {
-                abreJanelaEmpresarial();
-            } else {
-                abreJanelaSingular();
+        Usuario usuario = usuarioDAO.buscarUsuarioPorEmailESenha(email, senha);
+
+        if (usuario != null) {
+            try {
+                // Carregar a próxima tela
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/empresarial-view.fxml"));
+                Parent root = loader.load();
+
+                // Obter o controlador da próxima tela
+                EmpresarialView empresarialController = loader.getController();
+
+                // Passar o usuário logado para o controlador da próxima tela
+                empresarialController.setUsuarioLogado(usuario);
+
+                // Código para mudar de tela, como:
+                Stage stage = (Stage) logInButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         } else {
-            exibirMensagem("Erro de login", "Nome de usuário ou senha incorretos.");
+            exibirMensagem("Erro de login", "Usuario ou senha incoretos");
         }
     }
 
@@ -108,7 +122,7 @@ public class LogInController {
 
     private void abreJanelaEmpresarial() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/empresarialView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/empresarial-view.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -126,7 +140,7 @@ public class LogInController {
 
     private void abreJanelaSingular() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/singularView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/singular-view.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));

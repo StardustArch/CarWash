@@ -1,58 +1,34 @@
 package com.example.carwash.dao;
 
 import com.example.carwash.model.Servico;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import com.example.carwash.model.TipoServico;
+import com.example.carwash.model.Plano;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class ServicoDAO {
+    private Connection connection;
 
-    private Connection conexao;
-
-    public ServicoDAO(Connection conexao) {
-        this.conexao = conexao;
+    public ServicoDAO(Connection connection) {
+        this.connection = connection;
     }
 
-    public void adicionarServico(Servico servico) throws SQLException {
-        String sql = "INSERT INTO servicos (descricao, tipo_servico, preco) VALUES (?, ?, ?)";
-        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setString(1, servico.getDescricao());
-            stmt.setString(2, servico.getTipoServico());
-            stmt.setDouble(3, servico.getPreco());
-            stmt.executeUpdate();
-        }
-    }
-
-    public List<Servico> listarServicos() throws SQLException {
-        List<Servico> servicos = new ArrayList<>();
-        String sql = "SELECT * FROM servicos";
-        try (Statement stmt = conexao.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-
-            while (rs.next()) {
-                servicos.add(new Servico(
-                        rs.getInt("id"),
-                        rs.getString("descricao"),
-                        rs.getString("tipo_servico"),
-                        rs.getDouble("preco")
-                ));
-            }
-        }
-        return servicos;
-    }
-
-    public Servico buscarServicoPorId(int id) throws SQLException {
+    public Servico buscarServicoPorId(int servicoId) throws SQLException {
         String sql = "SELECT * FROM servicos WHERE id = ?";
-        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setInt(1, id);
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, servicoId);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    return new Servico(
-                            rs.getInt("id"),
-                            rs.getString("descricao"),
-                            rs.getString("tipo_servico"),
-                            rs.getDouble("preco")
-                    );
+                    Servico servico = new Servico();
+                    servico.setId(rs.getInt("id"));
+                    servico.setDescricao(rs.getString("descricao"));
+                    servico.setTipoServico(TipoServico.valueOf(rs.getString("tipo_servico")));
+                    servico.setPlano(Plano.valueOf(rs.getString("plano")));
+                    servico.setPreco(rs.getBigDecimal("preco"));
+                    return servico;
                 }
             }
         }

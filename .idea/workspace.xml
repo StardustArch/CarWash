@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a69d0eb-4b57-4785-aafb-f5a30fdd36b1" name="Changes" comment="adicionados os model e DAO, e classe de conneccao, para uma imagem de mysql sem senha">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_25_2024_7_42_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_25_2024_7_42_PM_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_8_25_2024_7_42_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/empresarial-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/singular-view.fxml" afterDir="false" />
+    <list default="true" id="0a69d0eb-4b57-4785-aafb-f5a30fdd36b1" name="Changes" comment="adicionado o metodo para diferenciar os usuarios, assim como a base das interfaces">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/AgendamentoItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/EmpresarialView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/StatusAgendamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/AgendamentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/AgendamentoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/ServicoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/ServicoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Agendamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Agendamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Plano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Plano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Servico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Servico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/TipoServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/empresarial-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/empresarial-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -69,6 +76,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/Sidik/IdeaProjects/CarWash/src/main/java/com/example/carwash",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -124,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724597856875</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adicionado o metodo para diferenciar os usuarios, assim como a base das interfaces">
+      <option name="closed" value="true" />
+      <created>1724609243244</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724609243244</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Aplicados diretorios mvc (view esta no resources)" />
     <MESSAGE value="adicionados os model e DAO, e classe de conneccao, para uma imagem de mysql sem senha" />
-    <option name="LAST_COMMIT_MESSAGE" value="adicionados os model e DAO, e classe de conneccao, para uma imagem de mysql sem senha" />
+    <MESSAGE value="adicionado o metodo para diferenciar os usuarios, assim como a base das interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionado o metodo para diferenciar os usuarios, assim como a base das interfaces" />
   </component>
 </project>

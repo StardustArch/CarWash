@@ -1,23 +1,25 @@
 package com.example.carwash.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Agendamento {
     private int id;
-    private Usuario usuario;
-    private Servico servico;
-    private Date data;
-    private String status; // Pendente, Concluído, etc.
+    private int usuarioId;
+    private int servicoId;
+    private LocalDate data;
+    private StatusAgendamento status;
+    private Servico servico;  // Opcional: para obter detalhes do serviço
 
-    public Agendamento(int id, Usuario usuario, Servico servico, Date data, String status) {
+    public Agendamento() {}
+
+    public Agendamento(int id, int usuarioId, int servicoId, LocalDate data, String status) {
         this.id = id;
-        this.usuario = usuario;
-        this.servico = servico;
+        this.usuarioId = usuarioId;
+        this.servicoId = servicoId;
         this.data = data;
-        this.status = status;
+        this.status = StatusAgendamento.valueOf(status);
     }
 
-    // Getters e Setters
     public int getId() {
         return id;
     }
@@ -26,12 +28,36 @@ public class Agendamento {
         this.id = id;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public int getUsuarioId() {
+        return usuarioId;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuarioId(int usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public int getServicoId() {
+        return servicoId;
+    }
+
+    public void setServicoId(int servicoId) {
+        this.servicoId = servicoId;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public StatusAgendamento getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusAgendamento status) {
+        this.status = status;
     }
 
     public Servico getServico() {
@@ -42,19 +68,15 @@ public class Agendamento {
         this.servico = servico;
     }
 
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    @Override
+    public String toString() {
+        return "Agendamento{" +
+                "id=" + id +
+                ", usuarioId=" + usuarioId +
+                ", servicoId=" + servicoId +
+                ", data=" + data +
+                ", status=" + status +
+                ", servico=" + servico +
+                '}';
     }
 }

@@ -1,19 +1,16 @@
 package com.example.carwash.model;
 
+import java.math.BigDecimal;
+
 public class Servico {
     private int id;
     private String descricao;
-    private String tipoServico; // Lavagem a seco, Polimento, etc.
-    private double preco;
+    private TipoServico tipoServico;
+    private Plano plano;
+    private BigDecimal preco;
 
-    public Servico(int id, String descricao, String tipoServico, double preco) {
-        this.id = id;
-        this.descricao = descricao;
-        this.tipoServico = tipoServico;
-        this.preco = preco;
-    }
+    // Getters and Setters
 
-    // Getters e Setters
     public int getId() {
         return id;
     }
@@ -30,19 +27,38 @@ public class Servico {
         this.descricao = descricao;
     }
 
-    public String getTipoServico() {
+    public TipoServico getTipoServico() {
         return tipoServico;
     }
 
-    public void setTipoServico(String tipoServico) {
+    public void setTipoServico(TipoServico tipoServico) {
         this.tipoServico = tipoServico;
     }
 
-    public double getPreco() {
+    public Plano getPlano() {
+        return plano;
+    }
+
+    public void setPlano(Plano plano) {
+        this.plano = plano;
+    }
+
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return "Servico{" +
+                "id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", tipoServico=" + tipoServico +
+                ", plano=" + plano +
+                ", preco=" + preco +
+                '}';
     }
 }

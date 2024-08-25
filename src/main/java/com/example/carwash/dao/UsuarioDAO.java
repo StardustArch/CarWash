@@ -44,6 +44,25 @@ public class UsuarioDAO {
         return null;
     }
 
+    public Usuario buscarUsuarioPorId(int id) throws SQLException {
+        String sql = "SELECT * FROM usuarios WHERE id = ?";
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return new Usuario(
+                            rs.getInt("id"),
+                            rs.getString("nome"),
+                            rs.getString("email"),
+                            rs.getString("senha"),
+                            rs.getString("tipo_usuario")
+                    );
+                }
+            }
+        }
+        return null; // Retorna null se nenhum usuário for encontrado com o ID especificado
+    }
+
     public List<Usuario> listarUsuarios() throws SQLException {
         List<Usuario> usuarios = new ArrayList<>();
         String sql = "SELECT * FROM usuarios";
