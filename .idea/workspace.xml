@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a69d0eb-4b57-4785-aafb-f5a30fdd36b1" name="Changes" comment="Aplicados diretorios mvc (view esta no resources)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/AgendamentoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/HistoricoServicoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/ServicoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/UsuarioDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Agendamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/HistoricoServico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Servico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Usuario.java" afterDir="false" />
+    <list default="true" id="0a69d0eb-4b57-4785-aafb-f5a30fdd36b1" name="Changes" comment="adicionados os model e DAO, e classe de conneccao, para uma imagem de mysql sem senha">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/CadastroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/LogInController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Plano.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/BD/BD.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/logIn-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +28,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SideralSkylark&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/StardustArch/CarWash.git&quot;,
+    &quot;accountId&quot;: &quot;9e903633-1299-43a3-b0b0-359e712e1750&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -38,9 +54,12 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2l9Y39e5FcODHi0BZxzzRPgcnfg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -50,10 +69,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "Maven.CarWash [clean].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "logIn",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -63,6 +83,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.carwash.HelloApplication" />
+      <module name="CarWash" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -79,7 +108,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1724593560264</updated>
-      <workItem from="1724593561352" duration="3297000" />
+      <workItem from="1724593561352" duration="3995000" />
+      <workItem from="1724598303568" duration="18000" />
+      <workItem from="1724598565283" duration="1969000" />
+      <workItem from="1724603408225" duration="3105000" />
     </task>
     <task id="LOCAL-00001" summary="Aplicados diretorios mvc (view esta no resources)">
       <option name="closed" value="true" />
@@ -89,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724597066398</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adicionados os model e DAO, e classe de conneccao, para uma imagem de mysql sem senha">
+      <option name="closed" value="true" />
+      <created>1724597856875</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724597856875</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Aplicados diretorios mvc (view esta no resources)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aplicados diretorios mvc (view esta no resources)" />
+    <MESSAGE value="adicionados os model e DAO, e classe de conneccao, para uma imagem de mysql sem senha" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionados os model e DAO, e classe de conneccao, para uma imagem de mysql sem senha" />
   </component>
 </project>

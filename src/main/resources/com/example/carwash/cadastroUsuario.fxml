@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.CadastroController">
+   <children>
+      <Label layoutX="259.0" layoutY="125.0" text="Nome do usuario" />
+      <Label layoutX="289.0" layoutY="183.0" text="Email" />
+      <PasswordField fx:id="senhaField" layoutX="231.0" layoutY="277.0" />
+      <Button fx:id="CadastroButton" layoutX="230.0" layoutY="315.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25.0" prefWidth="149.0" text="Cadastro" />
+      <TextField fx:id="nomeField" layoutX="231.0" layoutY="152.0" />
+      <TextField fx:id="emailField" layoutX="230.0" layoutY="210.0" />
+      <Label layoutX="291.0" layoutY="251.0" text="Senha" />
+   </children>
+</Pane>
