@@ -59,6 +59,11 @@ public class LogInController {
 
         if (verificarCredenciais(nomeUsuario, senha)) {
             exibirMensagem("Login bem-sucedido!", "Você está logado.");
+            if (eEmpresarial()) {
+                abreJanelaEmpresarial();
+            } else {
+                abreJanelaSingular();
+            }
         } else {
             exibirMensagem("Erro de login", "Nome de usuário ou senha incorretos.");
         }
@@ -87,6 +92,53 @@ public class LogInController {
             exibirMensagem("Erro de Login", "Erro ao verificar credenciais.");
             e.printStackTrace();
             return false;
+        }
+    }
+
+    private boolean eEmpresarial() {
+        try {
+            Usuario usuario = usuarioDAO.buscarUsuarioPorEmailESenha(nomeUsuarioField.getText(), senhaField.getText());
+            return usuario != null && "EMPRESARIAL".equals(usuario.getTipoUsuario());
+        } catch (SQLException e) {
+            exibirMensagem("Erro ao verificar tipo de usuário", "Erro ao verificar o tipo de usuário.");
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    private void abreJanelaEmpresarial() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/empresarialView.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Área Empresarial");
+            stage.show();
+
+            // Fechar a janela de login
+            Stage loginStage = (Stage) logInButton.getScene().getWindow();
+            loginStage.close();
+        } catch (IOException e) {
+            exibirMensagem("Erro ao abrir a janela empresarial", "Não foi possível abrir a janela empresarial.");
+            e.printStackTrace();
+        }
+    }
+
+    private void abreJanelaSingular() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/singularView.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Área Singular");
+            stage.show();
+
+            // Fechar a janela de login
+            Stage loginStage = (Stage) logInButton.getScene().getWindow();
+            loginStage.close();
+        } catch (IOException e) {
+            exibirMensagem("Erro ao abrir a janela singular", "Não foi possível abrir a janela singular.");
+            e.printStackTrace();
         }
     }
 
