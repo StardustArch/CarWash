@@ -61,25 +61,37 @@ public class LogInController {
 
         if (usuario != null) {
             try {
-                // Carregar a próxima tela
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/empresarial-view.fxml"));
-                Parent root = loader.load();
+                FXMLLoader loader;
+                Parent root;
+
+                if (usuario.getTipoUsuario().equals("EMPRESARIAL")) {
+                    loader = new FXMLLoader(getClass().getResource("/com/example/carwash/empresarial-view.fxml"));
+                } else {
+                    loader = new FXMLLoader(getClass().getResource("/com/example/carwash/singular-view.fxml"));
+                }
+
+                root = loader.load();
 
                 // Obter o controlador da próxima tela
-                EmpresarialView empresarialController = loader.getController();
+                if (usuario.getTipoUsuario().equals("EMPRESARIAL")) {
+                    EmpresarialView empresarialView = loader.getController();
+                    empresarialView.setUsuarioLogado(usuario);
+                } else {
+                    SingularViewController singularViewController = loader.getController();
+                    singularViewController.setUsuarioLogado(usuario);
+                }
 
-                // Passar o usuário logado para o controlador da próxima tela
-                empresarialController.setUsuarioLogado(usuario);
-
-                // Código para mudar de tela, como:
+                // Mudar de tela
                 Stage stage = (Stage) logInButton.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
+
             } catch (IOException e) {
+                exibirMensagem("Erro", "Não foi possível carregar a tela.");
                 e.printStackTrace();
             }
         } else {
-            exibirMensagem("Erro de login", "Usuario ou senha incoretos");
+            exibirMensagem("Erro de login", "Usuário ou senha incorretos");
         }
     }
 

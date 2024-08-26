@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.AdicionarAgendamentoController">
+   <!-- Título -->
+   <Label layoutX="20.0" layoutY="20.0" text="Adicionar Agendamento" />
+
+   <!-- Data -->
+   <Label layoutX="20.0" layoutY="70.0" text="Data:" />
+   <DatePicker fx:id="dataPicker" layoutX="100.0" layoutY="70.0" />
+
+   <!-- Descrição -->
+   <Label layoutX="20.0" layoutY="120.0" text="Descrição:" />
+   <TextField fx:id="descricaoTextField" layoutX="100.0" layoutY="120.0" prefWidth="250.0" />
+
+   <!-- Tipo de Serviço -->
+   <Label layoutX="20.0" layoutY="170.0" text="Tipo de Serviço:" />
+   <ComboBox fx:id="tipoServicoComboBox" layoutX="100.0" layoutY="170.0" prefWidth="150.0" />
+
+   <!-- Plano -->
+   <Label layoutX="20.0" layoutY="220.0" text="Plano:" />
+   <ComboBox fx:id="planoComboBox" layoutX="100.0" layoutY="220.0" prefWidth="150.0" />
+
+   <!-- Botões -->
+   <Button layoutX="100.0" layoutY="270.0" mnemonicParsing="false" text="Confirmar" onAction="#confirmar" />
+   <Button layoutX="200.0" layoutY="270.0" mnemonicParsing="false" text="Cancelar" onAction="#cancelar" />
+</AnchorPane>

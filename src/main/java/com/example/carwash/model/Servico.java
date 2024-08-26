@@ -9,6 +9,16 @@ public class Servico {
     private Plano plano;
     private BigDecimal preco;
 
+    public Servico() {}
+
+    public Servico(int id, String descricao, String tipoServico, String plano, BigDecimal preco) {
+        this.id = id;
+        this.descricao = descricao;
+        this.tipoServico = TipoServico.valueOf(tipoServico);
+        this.plano = Plano.valueOf(plano);
+        this.preco = preco;
+    }
+
     // Getters and Setters
 
     public int getId() {
