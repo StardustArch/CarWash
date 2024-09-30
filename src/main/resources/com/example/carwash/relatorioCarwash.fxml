@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.RelatorioCarwashController">
+   <children>
+      <VBox fx:id="vboxAgendamentos" layoutX="273.0" layoutY="9.0" prefHeight="404.0" prefWidth="364.0" />
+      <Label fx:id="labelPreco" layoutX="34.0" layoutY="375.0" prefHeight="17.0" prefWidth="166.0" text="Label" />
+      <Label layoutX="34.0" layoutY="350.0" prefHeight="17.0" prefWidth="166.0" text="Lucros:" />
+      <ChoiceBox fx:id="filtroChoiceBox" layoutX="14.0" layoutY="30.0" prefHeight="25.0" prefWidth="159.0" />
+   </children>
+</AnchorPane>

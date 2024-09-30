@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="459.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.SingularViewController">
+   <children>
+      <ListView fx:id="agendamentosListView" layoutX="488.0" layoutY="45.0" prefHeight="403.0" prefWidth="200.0" />
+      <Label layoutX="488.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" text="Seus Funcionarios" />
+      <Button fx:id="editarAgendamentoButton" layoutX="377.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarAgendamento" prefHeight="25.0" prefWidth="103.0" text="Editar" />
+      <Button fx:id="removerAgendamentoButton" layoutX="260.0" layoutY="420.0" mnemonicParsing="false" onAction="#removerAgendamento" prefHeight="25.0" prefWidth="103.0" text="Remover" />
+      <Button fx:id="adicionarFuncionarioButton" layoutX="143.0" layoutY="420.0" mnemonicParsing="false" onAction="#adicionarAgendamento" prefHeight="25.0" prefWidth="103.0" text="Adicionar" />
+      <Label fx:id="nomeLabel" layoutX="84.0" layoutY="81.0" prefHeight="17.0" prefWidth="368.0" />
+      <Label fx:id="emailLabel" layoutX="84.0" layoutY="125.0" prefHeight="17.0" prefWidth="368.0" />
+      <Label fx:id="senhaLabel" layoutX="84.0" layoutY="164.0" prefHeight="17.0" prefWidth="368.0" />
+   </children>
+</AnchorPane>

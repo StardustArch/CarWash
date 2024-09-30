@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="459.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.ProdutosController">
+   <children>
+      <Button fx:id="relatorioButao" layoutX="14.0" layoutY="83.0" mnemonicParsing="false" onAction="#abrirRelatorio" prefHeight="40.0" prefWidth="177.0" text="Relatorio" />
+      <Button fx:id="produtosButton" layoutX="14.0" layoutY="132.0" mnemonicParsing="false" onAction="#abrirProdutos" prefHeight="40.0" prefWidth="177.0" text="Produtos" />
+      <Button fx:id="GeralButton" layoutX="14.0" layoutY="33.0" mnemonicParsing="false" onAction="#abrirGeral" prefHeight="40.0" prefWidth="177.0" text="Geral" />
+      <Label fx:id="detergenteLabel" layoutX="247.0" layoutY="65.0" prefHeight="28.0" prefWidth="103.0" text="Detergente: " />
+      <Label fx:id="ceraLabel" layoutX="247.0" layoutY="115.0" text="Cera: " />
+      <Label fx:id="sparyLabel" layoutX="247.0" layoutY="152.0" text="Spary de rodas: " />
+      <Button fx:id="adicionarButton" layoutX="241.0" layoutY="420.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="97.0" text="Adicionar" />
+      <Button fx:id="removerButton" layoutX="350.0" layoutY="420.0" mnemonicParsing="false" onAction="#removerProduto" prefHeight="25.0" prefWidth="97.0" text="Remover" />
+   </children>
+</AnchorPane>

@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AgendamentoDAO {
 
@@ -225,5 +226,17 @@ public class AgendamentoDAO {
             int rowsAffected = stmt.executeUpdate();
             return rowsAffected > 0;
         }
+    }
+
+    public List<Agendamento> listarAgendamentosConcluidos() throws SQLException {
+        return buscarTodosAgendamentos().stream()
+                .filter(agendamento -> agendamento.getStatus() == StatusAgendamento.CONFIRMADO)
+                .collect(Collectors.toList());
+    }
+
+    public List<Agendamento> filtrarAgendamentosConcluidosPorData(LocalDate inicio, LocalDate fim) throws SQLException {
+        return listarAgendamentosConcluidos().stream()
+                .filter(agendamento -> !agendamento.getData().isBefore(inicio) && !agendamento.getData().isAfter(fim))
+                .collect(Collectors.toList());
     }
 }

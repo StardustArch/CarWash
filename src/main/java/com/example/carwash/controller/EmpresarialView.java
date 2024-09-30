@@ -6,14 +6,18 @@ import com.example.carwash.dao.ServicoDAO;
 import com.example.carwash.model.Agendamento;
 import com.example.carwash.model.Servico;
 import com.example.carwash.model.Usuario;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -26,6 +30,12 @@ public class EmpresarialView {
 
     @FXML
     private ListView<AnchorPane> agendamentosListView;
+
+    @FXML
+    private Button relatorioButao;
+
+    @FXML
+    private Button editarButton;
 
     @FXML
     private Button marcarButton;
@@ -150,11 +160,55 @@ public class EmpresarialView {
         }
     }
 
+    @FXML
+    public void abrirRelatorio(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/relatorioCarwash.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Relatorio");
+            stage.show();
+        } catch (IOException e) {
+            exibirMensagem("Erro ao abrir a tela de cadastro", "Não foi possível abrir a tela de Relatorio.");
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void gerirFuncionarios(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/gestaoFuncionariosCarWash.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Gerir funcionarios");
+            stage.show();
+        } catch (IOException e) {
+            exibirMensagem("Erro ao abrir a tela de cadastro", "Não foi possível abrir a tela de gestao de funcionarios.");
+            e.printStackTrace();
+        }
+    }
+
     private void exibirMensagem(String titulo, String mensagem) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(mensagem);
         alert.showAndWait();
+    }
+
+    public void abrirProdutos(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/produtos.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Produtos");
+            stage.show();
+        } catch (IOException e) {
+            exibirMensagem("Erro ao abrir a tela de produtos", "Não foi possível abrir a tela de produtos.");
+            e.printStackTrace();
+        }
     }
 }
