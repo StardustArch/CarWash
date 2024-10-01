@@ -93,7 +93,7 @@ public class ProdutoGasto {
 
                         // Aqui você atualizaria o produto no banco de dados
                         ProdutoDAO produtoDAO = new ProdutoDAO();
-                        produtoDAO.atualizarProduto(produto.getTipoProduto(), produto.getQuantia());
+                        produtoDAO.atualizarProdutos(produto.getTipoProduto(), produto.getQuantia());
 
                     } catch (Exception e) {
                         e.printStackTrace();
