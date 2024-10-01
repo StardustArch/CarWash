@@ -1,0 +1,17 @@
+.agendante-label {
+    -fx-text-fill: #ffffff; /* Texto branco */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-font-weight: bold; /* Fonte em negrito */
+}
+
+.preco-label {
+    -fx-text-fill: #27ae60; /* Texto verde */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-font-weight: bold; /* Fonte em negrito */
+    -fx-alignment: center-right; /* Alinhamento à direita */
+}
+
+.anchor-pane {
+    -fx-background-color: #34495e; /* Cor de fundo */
+    -fx-padding: 10; /* Espaçamento interno */
+}

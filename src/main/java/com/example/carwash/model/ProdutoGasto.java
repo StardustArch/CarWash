@@ -1,8 +1,10 @@
 package com.example.carwash.model;
 
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import com.example.carwash.dao.ProdutoDAO;
+import javafx.concurrent.Task;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,13 +12,13 @@ public class ProdutoGasto {
     private int id_Servico;
     private List<Produto> produtosUsados;
 
-    public ProdutoGasto () {
-        produtosUsados = new ArrayList<Produto>();
+    public ProdutoGasto() {
+        produtosUsados = new ArrayList<>();
     }
 
     public ProdutoGasto(int id_Servico) {
         this.id_Servico = id_Servico;
-        produtosUsados = new ArrayList<Produto>();
+        produtosUsados = new ArrayList<>();
     }
 
     public int getId_Servico() {
@@ -38,8 +40,8 @@ public class ProdutoGasto {
             produto.setTipoProduto(TipoProduto.valueOf("DETERGENTE"));
             produto.setQuantia(2);
             Produto spray = new Produto();
-            produto.setTipoProduto(TipoProduto.valueOf("SPRAY"));
-            produto.setQuantia(2);
+            spray.setTipoProduto(TipoProduto.valueOf("SPRAY"));
+            spray.setQuantia(2); // Corrigido para adicionar quantia corretamente
             produtosUsados.add(produto);
             produtosUsados.add(spray);
         } else if (id_Servico == 3) {
@@ -51,71 +53,81 @@ public class ProdutoGasto {
             Produto produto = new Produto();
             produto.setTipoProduto(TipoProduto.valueOf("DETERGENTE"));
             produto.setQuantia(6);
-            Produto spary = new Produto();
-            produto.setTipoProduto(TipoProduto.valueOf("SPRAY"));
-            produto.setQuantia(6);
+            Produto spray = new Produto();
+            spray.setTipoProduto(TipoProduto.valueOf("SPRAY"));
+            spray.setQuantia(6);
             Produto cera = new Produto();
             cera.setTipoProduto(TipoProduto.valueOf("CERA"));
             cera.setQuantia(5);
             produtosUsados.add(produto);
-            produtosUsados.add(spary);
+            produtosUsados.add(spray);
             produtosUsados.add(cera);
         } else if (id_Servico == 5) {
             Produto produto = new Produto();
             produto.setTipoProduto(TipoProduto.valueOf("DETERGENTE"));
             produto.setQuantia(2);
-            Produto spary = new Produto();
-            produto.setTipoProduto(TipoProduto.valueOf("SPRAY"));
-            produto.setQuantia(2);
+            Produto spray = new Produto();
+            spray.setTipoProduto(TipoProduto.valueOf("SPRAY"));
+            spray.setQuantia(2);
             Produto cera = new Produto();
             cera.setTipoProduto(TipoProduto.valueOf("CERA"));
             cera.setQuantia(1);
             produtosUsados.add(produto);
-            produtosUsados.add(spary);
+            produtosUsados.add(spray);
             produtosUsados.add(cera);
         }
         return produtosUsados;
     }
 
-    //por no marcar como concluido
-/*
     public void concluirAgendamento() {
-        ProdutoGasto produtoGasto = new ProdutoGasto(this.id_Servico);
-        List<Produto> produtosUsados = produtoGasto.obterQuantidadeGasta();
+        List<Produto> produtosUsados = obterQuantidadeGasta(); // Atualiza a lista de produtos
 
-        // Para cada produto usado, envie uma requisição de atualização
-        for (Produto produto : produtosUsados) {
-            try {
-                System.out.println("Tipo prod: " + produto.getTipoProduto() + ", Quantia: " + produto.getQuantia());
-                // Cria a URL do servlet
-                URL url = new URL("http://localhost:8080/CarwashEE_war_exploded/atualizarProduto");
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                con.setRequestMethod("PUT");
-                con.setRequestProperty("Content-Type", "application/json; utf-8");
-                con.setDoOutput(true);
+        // Cria uma tarefa para a execução assíncrona
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                // Para cada produto usado, atualiza a quantidade no banco de dados
+                for (Produto produto : produtosUsados) {
+                    try {
+                        System.out.println("Tipo prod: " + produto.getTipoProduto() + ", Quantia: " + produto.getQuantia());
 
-                // Prepara os dados do produto no formato JSON
-                String jsonInputString = "{ \"tipoProduto\": \"" + produto.getTipoProduto() +
-                        "\", \"valor\": " + (-produto.getQuantia()) + " }";
+                        // Aqui você atualizaria o produto no banco de dados
+                        ProdutoDAO produtoDAO = new ProdutoDAO();
+                        produtoDAO.atualizarProduto(produto.getTipoProduto(), produto.getQuantia());
 
-                // Envia o JSON ao servlet
-                try (OutputStream os = con.getOutputStream()) {
-                    byte[] input = jsonInputString.getBytes("utf-8");
-                    os.write(input, 0, input.length);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
-
-                // Verifica a resposta do servidor
-                int responseCode = con.getResponseCode();
-                if (responseCode == HttpServletResponse.SC_OK) {
-                    System.out.println("Produto atualizado com sucesso: " + produto.getTipoProduto());
-                } else {
-                    System.out.println("Erro ao atualizar produto: " + produto.getTipoProduto());
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
+                return null;
             }
-        }
-    } */
 
+            @Override
+            protected void succeeded() {
+                super.succeeded();
+                // Exibe uma mensagem de sucesso na interface do usuário
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Atualização de Produtos");
+                alert.setHeaderText(null);
+                alert.setContentText("Todos os produtos foram atualizados com sucesso!");
+                alert.showAndWait();
+            }
+
+            @Override
+            protected void failed() {
+                super.failed();
+                // Exibe uma mensagem de erro na interface do usuário
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Erro na Atualização");
+                alert.setHeaderText(null);
+                alert.setContentText("Houve um erro ao atualizar os produtos.");
+                alert.showAndWait();
+            }
+        };
+
+        // Inicia a tarefa em um novo thread
+        Thread thread = new Thread(task);
+        thread.setDaemon(true);
+        thread.start();
+    }
 }

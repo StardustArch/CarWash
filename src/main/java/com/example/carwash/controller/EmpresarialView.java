@@ -4,6 +4,7 @@ import com.example.carwash.dao.AgendamentoDAO;
 import com.example.carwash.dao.DatabaseConnection;
 import com.example.carwash.dao.ServicoDAO;
 import com.example.carwash.model.Agendamento;
+import com.example.carwash.model.ProdutoGasto;
 import com.example.carwash.model.Servico;
 import com.example.carwash.model.Usuario;
 import javafx.event.ActionEvent;
@@ -17,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -55,8 +57,23 @@ public class EmpresarialView {
     @FXML
     private Label dataLabel;
 
+
+    @FXML
+    private Button GeralBtn;
+
     @FXML
     private Label precoLabel;
+
+    @FXML
+    private Pane content;
+    @FXML
+    private Pane main;
+
+    @FXML
+    void geralact(ActionEvent event) {
+        this.content.getChildren().clear();
+        this.content.getChildren().add(main);
+    }
 
     private AgendamentoDAO agendamentoDAO;
     private ServicoDAO servicoDAO;
@@ -146,6 +163,10 @@ public class EmpresarialView {
                 boolean atualizado = agendamentoDAO.atualizarStatusAgendamento(agendamento.getId(), "CONFIRMADO");
 
                 if (atualizado) {
+                    int idServico = agendamentoDAO.obterAgendamentoPorId(agendamento.getId()).getServicoId();
+                    // Cria uma instância de ProdutoGasto e chama o método concluirAgendamento
+                    ProdutoGasto produtoGasto = new ProdutoGasto(idServico);
+                    produtoGasto.concluirAgendamento();
                     exibirMensagem("Sucesso", "Agendamento marcado como confirmado.");
                     carregarAgendamentos(); // Recarrega a lista de agendamentos
                 } else {
@@ -163,17 +184,21 @@ public class EmpresarialView {
     @FXML
     public void abrirRelatorio(ActionEvent event) {
         try {
+            // Carrega o layout do FXML
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/relatorioCarwash.fxml"));
             Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Relatorio");
-            stage.show();
+
+            // Limpa o conteúdo atual (opcional)
+            this.content.getChildren().clear(); // Limpa o conteúdo anterior, se necessário
+
+            // Adiciona o novo conteúdo ao contêiner
+            this.content.getChildren().add(root);
         } catch (IOException e) {
-            exibirMensagem("Erro ao abrir a tela de cadastro", "Não foi possível abrir a tela de Relatorio.");
+            exibirMensagem("Erro ao abrir a tela de relatório", "Não foi possível abrir a tela de Relatório.");
             e.printStackTrace();
         }
     }
+
 
     @FXML
     public void gerirFuncionarios(ActionEvent event) {
@@ -202,10 +227,11 @@ public class EmpresarialView {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/carwash/produtos.fxml"));
             Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Produtos");
-            stage.show();
+            // Limpa o conteúdo atual (opcional)
+            this.content.getChildren().clear(); // Limpa o conteúdo anterior, se necessário
+
+            // Adiciona o novo conteúdo ao contêiner
+            this.content.getChildren().add(root);
         } catch (IOException e) {
             exibirMensagem("Erro ao abrir a tela de produtos", "Não foi possível abrir a tela de produtos.");
             e.printStackTrace();

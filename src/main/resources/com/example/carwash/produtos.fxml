@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="459.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.ProdutosController">
+<AnchorPane prefHeight="459.0" prefWidth="665.0" styleClass="root" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.ProdutosController">
+   <stylesheets>
+      <URL value="@style4.css" />
+   </stylesheets>
+
    <children>
-      <Button fx:id="relatorioButao" layoutX="14.0" layoutY="83.0" mnemonicParsing="false" onAction="#abrirRelatorio" prefHeight="40.0" prefWidth="177.0" text="Relatorio" />
-      <Button fx:id="produtosButton" layoutX="14.0" layoutY="132.0" mnemonicParsing="false" onAction="#abrirProdutos" prefHeight="40.0" prefWidth="177.0" text="Produtos" />
-      <Button fx:id="GeralButton" layoutX="14.0" layoutY="33.0" mnemonicParsing="false" onAction="#abrirGeral" prefHeight="40.0" prefWidth="177.0" text="Geral" />
-      <Label fx:id="detergenteLabel" layoutX="247.0" layoutY="65.0" prefHeight="28.0" prefWidth="103.0" text="Detergente: " />
-      <Label fx:id="ceraLabel" layoutX="247.0" layoutY="115.0" text="Cera: " />
-      <Label fx:id="sparyLabel" layoutX="247.0" layoutY="152.0" text="Spary de rodas: " />
-      <Button fx:id="adicionarButton" layoutX="241.0" layoutY="420.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="97.0" text="Adicionar" />
-      <Button fx:id="removerButton" layoutX="350.0" layoutY="420.0" mnemonicParsing="false" onAction="#removerProduto" prefHeight="25.0" prefWidth="97.0" text="Remover" />
+
+      <!-- Botões para adicionar/remover -->
+      <Button fx:id="adicionarButton" layoutX="241.0" layoutY="420.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="97.0" styleClass="action-button" text="Adicionar" />
+      <Button fx:id="removerButton" layoutX="350.0" layoutY="420.0" mnemonicParsing="false" onAction="#removerProduto" prefHeight="25.0" prefWidth="97.0" styleClass="action-button" text="Remover" />
+      <Pane layoutX="58.0" layoutY="63.0" prefHeight="200.0" prefWidth="550.0" style="-fx-border-color: #2c3e50; -fx-border-radius: 10px;">
+         <children>
+            <!-- Labels para Produtos -->
+            <Label fx:id="detergenteLabel" layoutX="14.0" layoutY="44.0" prefHeight="28.0" prefWidth="200.0" styleClass="product-label" text="Detergente: " />
+            <Label fx:id="ceraLabel" layoutX="14.0" layoutY="86.0" prefHeight="28.0" prefWidth="200.0" styleClass="product-label" text="Cera: " />
+            <Label fx:id="sparyLabel" layoutX="14.0" layoutY="129.0" prefHeight="28.0" prefWidth="200.0" styleClass="product-label" text="Spray de Rodas: " />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="5.0" top="10.0" />
+         </padding>
+      </Pane>
+      <Label layoutX="274.0" layoutY="33.0" style="-fx-text-fill: #2c3e50; -fx-font-size: 25px; -fx-font-weight: bold;" text="Produtos" />
    </children>
 </AnchorPane>

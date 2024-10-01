@@ -1,0 +1,28 @@
+.title-label {
+    -fx-text-fill: #2c3e50; /* Cor do título */
+    -fx-font-size: 20px; /* Tamanho da fonte */
+    -fx-font-weight: bold; /* Negrito */
+    -fx-padding: 10; /* Espaçamento */
+}
+
+.info-label {
+    -fx-text-fill: #34495e; /* Cor das labels de informação */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 5; /* Espaçamento entre as labels */
+}
+
+.list-view {
+    -fx-background-color: #ecf0f1; /* Cor de fundo do ListView */
+    -fx-border-color: #bdc3c7; /* Cor da borda do ListView */
+}
+
+.action-button {
+    -fx-background-color: #3498db; /* Cor de fundo dos botões */
+    -fx-text-fill: white; /* Texto em branco */
+    -fx-font-weight: bold; /* Negrito */
+    -fx-background-radius: 5; /* Bordas arredondadas */
+}
+
+.action-button:hover {
+    -fx-background-color: #2980b9; /* Cor ao passar o mouse */
+}

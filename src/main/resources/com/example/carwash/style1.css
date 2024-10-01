@@ -1,0 +1,18 @@
+/* style1.css */
+.root {
+    -fx-background-color: #ecf0f1; /* Fundo claro */
+}
+
+.button {
+    -fx-background-color: #2c3e50; /* Cor primária */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-border-color: white; /* Borda branca */
+    -fx-border-width: 1px; /* Largura da borda */
+    -fx-padding: 10px; /* Padding do botão */
+    -fx-border-radius: 5px; /* Bordas arredondadas */
+    -fx-background-radius: 5px; /* Fundo arredondado */
+}
+
+.button:hover {
+    -fx-background-color: #34495e; /* Cor primária um pouco mais clara no hover */
+}

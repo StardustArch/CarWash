@@ -5,19 +5,20 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="459.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.SingularViewController">
+<AnchorPane prefHeight="459.0" prefWidth="702.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.SingularViewController">
    <children>
-      <Label fx:id="nomeLabel" layoutX="32.0" layoutY="37.0" prefHeight="17.0" prefWidth="103.0" text="Nome" />
-      <ListView fx:id="agendamentosListView" layoutX="488.0" layoutY="45.0" prefHeight="403.0" prefWidth="200.0" />
-      <Label layoutX="488.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" text="Seus agendamentos" />
-      <Button fx:id="editarAgendamentoButton" layoutX="377.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarAgendamento" prefHeight="25.0" prefWidth="103.0" text="Editar" />
-      <Button fx:id="removerAgendamentoButton" layoutX="260.0" layoutY="420.0" mnemonicParsing="false" onAction="#removerAgendamento" prefHeight="25.0" prefWidth="103.0" text="Remover" />
-      <Button fx:id="adicionarAgendamento" layoutX="143.0" layoutY="420.0" mnemonicParsing="false" onAction="#adicionarAgendamento" prefHeight="25.0" prefWidth="103.0" text="Adicionar" />
-      <Label fx:id="descricaoLabel" layoutX="84.0" layoutY="81.0" prefHeight="17.0" prefWidth="368.0" />
-      <Label fx:id="dataLabel" layoutX="84.0" layoutY="125.0" prefHeight="17.0" prefWidth="368.0" />
-      <Label fx:id="tipoServicoLabel" layoutX="84.0" layoutY="164.0" prefHeight="17.0" prefWidth="368.0" />
-      <Label fx:id="categoriaLabel" layoutX="84.0" layoutY="206.0" prefHeight="17.0" prefWidth="368.0" />
-      <Label fx:id="precoLabel" layoutX="84.0" layoutY="302.0" prefHeight="17.0" prefWidth="368.0" />
+      <Label layoutX="32.0" layoutY="15.0" prefHeight="25.0" prefWidth="200.0" text="Seus Agendamentos" style="-fx-text-fill: #2c3e50; -fx-font-size: 18px; -fx-font-weight: bold;" />
+      <Label fx:id="nomeLabel" layoutX="32.0" layoutY="50.0" prefHeight="17.0" prefWidth="200.0" text="Nome" style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
+      <Label fx:id="descricaoLabel" layoutX="32.0" layoutY="80.0" prefHeight="17.0" prefWidth="368.0" text="Descrição" style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
+      <Label fx:id="dataLabel" layoutX="32.0" layoutY="110.0" prefHeight="17.0" prefWidth="368.0" text="Data" style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
+      <Label fx:id="tipoServicoLabel" layoutX="32.0" layoutY="140.0" prefHeight="17.0" prefWidth="368.0" text="Tipo de Serviço" style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
+      <Label fx:id="categoriaLabel" layoutX="32.0" layoutY="170.0" prefHeight="17.0" prefWidth="368.0" text="Categoria" style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
+      <Label fx:id="precoLabel" layoutX="32.0" layoutY="200.0" prefHeight="17.0" prefWidth="368.0" text="Preço" style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
+
+      <ListView fx:id="agendamentosListView" layoutX="490.0" layoutY="50.0" prefHeight="370.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #2c3e50; -fx-border-radius: 5px;" />
+
+      <Button fx:id="adicionarAgendamento" layoutX="143.0" layoutY="420.0" mnemonicParsing="false" onAction="#adicionarAgendamento" prefHeight="30.0" prefWidth="100.0" text="Adicionar" style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-border-color: #2c3e50; -fx-border-radius: 5px; -fx-padding: 5px;" />
+      <Button fx:id="editarAgendamentoButton" layoutX="260.0" layoutY="420.0" mnemonicParsing="false" onAction="#editarAgendamento" prefHeight="30.0" prefWidth="100.0" text="Editar" style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-border-color: #2c3e50; -fx-border-radius: 5px; -fx-padding: 5px;" />
+      <Button fx:id="removerAgendamentoButton" layoutX="377.0" layoutY="420.0" mnemonicParsing="false" onAction="#removerAgendamento" prefHeight="30.0" prefWidth="100.0" text="Remover" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-border-color: #c0392b; -fx-border-radius: 5px; -fx-padding: 5px;" />
    </children>
 </AnchorPane>

@@ -6,13 +6,20 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
+<?import java.net.URL?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="213.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.RemoverProdutoController">
+    <stylesheets>
+        <URL value="@style7.css" />
+    </stylesheets>
     <children>
-        <Label layoutX="24.0" layoutY="43.0" prefHeight="17.0" prefWidth="137.0" text="Tipo Produto" />
-        <Label layoutX="24.0" layoutY="146.0" text="Quantia" />
-        <ChoiceBox fx:id="tipoProdutoCB" layoutX="24.0" layoutY="68.0" prefWidth="150.0" />
-        <TextField fx:id="quantiaTF" layoutX="18.0" layoutY="175.0" prefHeight="25.0" prefWidth="150.0" />
-        <Button fx:id="removerProdutoButton" layoutX="24.0" layoutY="244.0" mnemonicParsing="false" onAction="#removerProduto" prefHeight="25.0" prefWidth="137.0" text="Remover" />
+        <Label layoutX="24.0" layoutY="20.0" prefHeight="20.0" prefWidth="137.0" text="Remover Produto" styleClass="title-label" />
+
+        <Label layoutX="24.0" layoutY="70.0" prefHeight="17.0" prefWidth="137.0" text="Tipo Produto" />
+        <ChoiceBox fx:id="tipoProdutoCB" layoutX="24.0" layoutY="90.0" prefWidth="150.0" styleClass="combo-box"/>
+
+        <Label layoutX="24.0" layoutY="135.0" text="Quantia" styleClass="quantidade-label" />
+        <TextField fx:id="quantiaTF" layoutX="18.0" layoutY="155.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field" />
+
+        <Button fx:id="removerProdutoButton" layoutX="24.0" layoutY="210.0" mnemonicParsing="false" onAction="#removerProduto" prefHeight="30.0" prefWidth="137.0" text="Remover" styleClass="remove-button" />
     </children>
 </AnchorPane>

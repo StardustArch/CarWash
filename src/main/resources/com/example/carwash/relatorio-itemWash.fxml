@@ -3,9 +3,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import java.net.URL?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.RelatorioItemController">
+   <stylesheets>
+      <URL value="@style5.css" />
+   </stylesheets>
    <children>
-      <Label fx:id="nomeAgendanteLabel" layoutX="24.0" layoutY="17.0" prefHeight="17.0" prefWidth="112.0" text="Nome" />
-      <Label fx:id="precoLabel" layoutX="254.0" layoutY="17.0" prefHeight="17.0" prefWidth="208.0" text="Preco" />
+      <Label fx:id="nomeAgendanteLabel" layoutX="24.0" layoutY="17.0" prefHeight="17.0" prefWidth="112.0" text="Nome" styleClass="agendante-label"/>
+      <Label fx:id="precoLabel" layoutX="254.0" layoutY="17.0" prefHeight="17.0" prefWidth="208.0" text="Preço" styleClass="preco-label"/>
    </children>
 </AnchorPane>

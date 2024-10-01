@@ -3,8 +3,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.AgendamentoItemController">
+<?import java.net.URL?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="475.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.AgendamentoItemController">
    <children>
-      <Label fx:id="nomeAgendanteLabel" layoutX="24.0" layoutY="17.0" prefHeight="17.0" prefWidth="431.0" text="Nome" />
+      <Label fx:id="nomeAgendanteLabel" layoutX="24.0" layoutY="17.0" prefHeight="17.0" prefWidth="431.0" text="Nome" style="-fx-text-fill: #2c3e50; -fx-font-size: 14px;" />
    </children>
 </AnchorPane>

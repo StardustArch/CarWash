@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
 <AnchorPane prefHeight="459.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.EmpresarialView">
+   <stylesheets>
+      <URL value="@style1.css" />
+   </stylesheets>
+
    <children>
-      <ListView fx:id="agendamentosListView" layoutX="658.0" layoutY="7.0" onMouseClicked="#mostrarDetalhes" prefHeight="445.0" prefWidth="223.0" />
-      <Button fx:id="marcarButton" layoutX="14.0" layoutY="95.0" mnemonicParsing="false" onAction="#marcarConcluido" prefHeight="40.0" prefWidth="177.0" text="Marcar concluido" />
-      <Label fx:id="nomeUsuarioLabel" layoutX="251.0" layoutY="40.0" prefHeight="17.0" prefWidth="385.0" />
-      <Label fx:id="descricaoLabel" layoutX="251.0" layoutY="84.0" prefHeight="31.0" prefWidth="385.0" />
-      <Label fx:id="tipoServicoLabel" layoutX="254.0" layoutY="131.0" prefHeight="17.0" prefWidth="394.0" />
-      <Label fx:id="planoLabel" layoutX="254.0" layoutY="177.0" prefHeight="17.0" prefWidth="394.0" />
-      <Label fx:id="dataLabel" layoutX="254.0" layoutY="221.0" prefHeight="17.0" prefWidth="394.0" />
-      <Label fx:id="precoLabel" layoutX="260.0" layoutY="330.0" prefHeight="17.0" prefWidth="163.0" />
-      <Button fx:id="relatorioButao" layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#abrirRelatorio" prefHeight="40.0" prefWidth="177.0" text="Relatorio" />
-      <Button fx:id="produtosButton" layoutX="14.0" layoutY="148.0" mnemonicParsing="false" onAction="#abrirProdutos" prefHeight="40.0" prefWidth="177.0" text="Produtos" />
+      <Button fx:id="relatorioButao" layoutX="14.0" layoutY="70.0" mnemonicParsing="false" onAction="#abrirRelatorio" prefHeight="40.0" prefWidth="177.0" text="Relatorio" />
+      <Button fx:id="produtosButton" layoutX="14.0" layoutY="123.0" mnemonicParsing="false" onAction="#abrirProdutos" prefHeight="40.0" prefWidth="177.0" text="Produtos" />
+      <Pane fx:id="content" layoutX="222.0" prefHeight="459.0" prefWidth="665.0">
+         <children>
+            <Pane fx:id="main" layoutX="-5.0" layoutY="-1.0" prefHeight="459.0" prefWidth="671.0">
+               <children>
+                  <ListView fx:id="agendamentosListView" layoutX="434.0" layoutY="7.0" onMouseClicked="#mostrarDetalhes" prefHeight="445.0" prefWidth="223.0" style="-fx-background-color: #bdc3c7;" /> <!-- Fundo da ListView -->
+                  <Label fx:id="nomeUsuarioLabel" layoutY="130.0" prefHeight="17.0" prefWidth="385.0" />
+                  <Label fx:id="descricaoLabel" layoutY="199.0" prefHeight="31.0" prefWidth="385.0" />
+                  <Label fx:id="tipoServicoLabel" layoutY="264.0" prefHeight="17.0" prefWidth="394.0" />
+                  <Label fx:id="planoLabel" layoutY="305.0" prefHeight="17.0" prefWidth="394.0" />
+                  <Label fx:id="dataLabel" layoutY="346.0" prefHeight="17.0" prefWidth="394.0" />
+                  <Label fx:id="precoLabel" layoutY="383.0" prefHeight="17.0" prefWidth="163.0" />
+                  <Label layoutX="82.0" layoutY="41.0" text="Detalhes do Agendamento aparecerão aqui " />
+
+                  <!-- Botões -->
+                  <Button fx:id="marcarButton" layoutX="242.0" layoutY="409.0" mnemonicParsing="false" onAction="#marcarConcluido" prefHeight="40.0" prefWidth="177.0" text="Marcar concluído" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Button fx:id="GeralBtn" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#geralact" prefHeight="40.0" prefWidth="177.0" text="Geral" />
    </children>
 </AnchorPane>

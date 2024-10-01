@@ -7,7 +7,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import java.net.URL?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.EditarAgendamentoController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
     <children>
         <!-- Título -->
         <Label layoutX="20.0" layoutY="20.0" text="Editar Agendamento" />

@@ -1,0 +1,31 @@
+.title-label {
+    -fx-text-fill: #2c3e50; /* Cor do título */
+    -fx-font-size: 16px; /* Tamanho da fonte */
+    -fx-font-weight: bold; /* Negrito */
+}
+
+.quantidade-label {
+    -fx-text-fill: #34495e; /* Cor da label de quantidade */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+}
+
+.combo-box {
+    -fx-background-color: #ecf0f1; /* Cor de fundo do ChoiceBox */
+    -fx-text-fill: #2c3e50; /* Cor do texto */
+}
+
+.text-field {
+    -fx-background-color: #ecf0f1; /* Cor de fundo do TextField */
+    -fx-text-fill: #2c3e50; /* Cor do texto */
+}
+
+.remove-button {
+    -fx-background-color: #e74c3c; /* Cor de fundo do botão */
+    -fx-text-fill: #ffffff; /* Texto em branco */
+    -fx-font-weight: bold; /* Negrito */
+    -fx-background-radius: 5; /* Bordas arredondadas */
+}
+
+.remove-button:hover {
+    -fx-background-color: #c0392b; /* Cor do botão ao passar o mouse */
+}

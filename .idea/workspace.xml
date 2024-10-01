@@ -4,22 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a69d0eb-4b57-4785-aafb-f5a30fdd36b1" name="Changes" comment="versao estavel e funcional">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/AdicionarProdutoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/ProdutosController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/RelatorioCarwashController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/RelatorioItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/RemoverProdutoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/ProdutoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/Produto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/ProdutoEdicao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/ProdutoGasto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/TipoProduto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/removerProduto.fxml" afterDir="false" />
+    <list default="true" id="0a69d0eb-4b57-4785-aafb-f5a30fdd36b1" name="Changes" comment="finalizada a tela do funcionario empresarial(caixa)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/style1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/style2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/style3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/style4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/style5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/style6.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/style7.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/style8.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/EmpresarialView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/controller/EmpresarialView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/AgendamentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/dao/AgendamentoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/ProdutoGasto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/carwash/model/ProdutoGasto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/BD/BD.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/BD/BD.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/adicionar-agendamento-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/adicionar-agendamento-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/adicionarProduto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/adicionarProduto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/agendamento-individual-item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/agendamento-individual-item.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/agendamento-item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/agendamento-item.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/cadastroUsuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/cadastroUsuario.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/editar-agendamento-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/editar-agendamento-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/empresarial-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/empresarial-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/gerirFuncionariosWash.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/gerirFuncionariosWash.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/logIn-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/logIn-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/produtos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/produtos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/relatorio-itemWash.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/relatorio-itemWash.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/relatorioCarwash.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/relatorioCarwash.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/removerProduto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/removerProduto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/carwash/singular-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/carwash/singular-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +63,6 @@
     &quot;accountId&quot;: &quot;9e903633-1299-43a3-b0b0-359e712e1750&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -73,25 +82,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CarWash [clean].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/Sidik/IdeaProjects/CarWash/src/main/java/com/example/carwash&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "Maven.CarWash [clean].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/Sidik/IdeaProjects/CarWash/src/main/java/com/example/carwash",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "CSS"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.carwash.HelloApplication" />
@@ -100,14 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.300" />
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.300" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -122,29 +128,7 @@
       <workItem from="1724598565283" duration="1969000" />
       <workItem from="1724603408225" duration="3105000" />
       <workItem from="1724673247814" duration="15276000" />
-      <workItem from="1724691929645" duration="5835000" />
-      <workItem from="1724744681829" duration="193000" />
-      <workItem from="1724752325096" duration="173000" />
-      <workItem from="1724755970438" duration="11000" />
-      <workItem from="1724756646045" duration="1070000" />
-      <workItem from="1725788504442" duration="985000" />
-      <workItem from="1725965822163" duration="439000" />
-      <workItem from="1725979037220" duration="2595000" />
-      <workItem from="1725988608321" duration="4000" />
-      <workItem from="1725988997886" duration="972000" />
-      <workItem from="1726041704726" duration="2248000" />
-      <workItem from="1726051284399" duration="6374000" />
-      <workItem from="1726125930417" duration="250000" />
-      <workItem from="1726128074439" duration="555000" />
-      <workItem from="1726144991946" duration="1558000" />
-      <workItem from="1726155933379" duration="23000" />
-      <workItem from="1726158993378" duration="1057000" />
-      <workItem from="1726209987714" duration="968000" />
-      <workItem from="1726735732710" duration="179000" />
-      <workItem from="1726761241883" duration="12000" />
-      <workItem from="1727685118180" duration="100000" />
-      <workItem from="1727686338285" duration="46000" />
-      <workItem from="1727697391273" duration="5039000" />
+      <workItem from="1724691929645" duration="5602000" />
     </task>
     <task id="LOCAL-00001" summary="Aplicados diretorios mvc (view esta no resources)">
       <option name="closed" value="true" />
@@ -178,15 +162,7 @@
       <option name="project" value="LOCAL" />
       <updated>1724618806757</updated>
     </task>
-    <task id="LOCAL-00005" summary="versao estavel e funcional">
-      <option name="closed" value="true" />
-      <created>1724697802865</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1724697802865</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +184,6 @@
     <MESSAGE value="adicionados os model e DAO, e classe de conneccao, para uma imagem de mysql sem senha" />
     <MESSAGE value="adicionado o metodo para diferenciar os usuarios, assim como a base das interfaces" />
     <MESSAGE value="finalizada a tela do funcionario empresarial(caixa)" />
-    <MESSAGE value="versao estavel e funcional" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao estavel e funcional" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalizada a tela do funcionario empresarial(caixa)" />
   </component>
 </project>

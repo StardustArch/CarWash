@@ -6,7 +6,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
+<?import java.net.URL?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carwash.controller.CadastroController">
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
+
    <children>
       <Label layoutX="259.0" layoutY="125.0" text="Nome do usuario" />
       <Label layoutX="289.0" layoutY="183.0" text="Email" />

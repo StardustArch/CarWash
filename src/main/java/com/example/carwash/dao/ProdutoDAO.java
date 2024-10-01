@@ -70,6 +70,40 @@ public class ProdutoDAO {
         }
     }
 
+    public boolean atualizarProdutos(TipoProduto tipoProduto, int valor) throws SQLException {
+        String sqlObterQuantidade = "SELECT quantia FROM produto WHERE tipo_produto = ?";
+        String sqlAtualizar = "UPDATE produto SET quantia = ? WHERE tipo_produto = ?";
+
+        try (PreparedStatement pstmtObterQuantidade = connection.prepareStatement(sqlObterQuantidade);
+             PreparedStatement pstmtAtualizar = connection.prepareStatement(sqlAtualizar)) {
+
+            // Primeiro, buscamos a quantidade atual do produto
+            pstmtObterQuantidade.setString(1, tipoProduto.name());
+            ResultSet rs = pstmtObterQuantidade.executeQuery();
+
+            if (rs.next()) {
+                int quantidadeAtual = rs.getInt("quantia");
+                int novaQuantidade = quantidadeAtual - valor;  // Incrementa ou decrementa a quantidade
+
+                // Impede que a quantidade fique negativa
+                if (novaQuantidade < 0) {
+                    novaQuantidade = 0;
+                }
+
+                pstmtAtualizar.setInt(1, novaQuantidade);
+                pstmtAtualizar.setString(2, tipoProduto.name());
+                pstmtAtualizar.executeUpdate();
+
+                return true;
+            } else {
+                return false;  // Produto não encontrado
+            }
+
+        } catch (SQLException e) {
+            throw new SQLException("Erro ao atualizar produto", e);
+        }
+    }
+
     // Método para adicionar ou atualizar o produto
     public boolean adicionarOuAtualizarProduto(Produto produto) throws SQLException {
         String sqlObterQuantidade = "SELECT quantia FROM produto WHERE tipo_produto = ?";

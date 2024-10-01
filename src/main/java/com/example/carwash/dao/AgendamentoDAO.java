@@ -137,7 +137,7 @@ public class AgendamentoDAO {
         }
     }
 
-    public List<Agendamento> buscarAgendamentosAtivos() throws SQLException {
+    public List<Agendamento>   buscarAgendamentosAtivos() throws SQLException {
         List<Agendamento> agendamentosAtivos = new ArrayList<>();
         String sql = "SELECT * FROM agendamentos WHERE status <> 'CONFIRMADO'";
 
@@ -216,6 +216,26 @@ public class AgendamentoDAO {
             stmt.setInt(2, id);
             int rowsUpdated = stmt.executeUpdate();
             return rowsUpdated > 0;
+        }
+    }
+    public Agendamento obterAgendamentoPorId(int id) throws SQLException {
+        String sql = "SELECT * FROM agendamentos WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Agendamento agendamento = new Agendamento();
+                    agendamento.setId(rs.getInt("id"));
+                    agendamento.setUsuarioId(rs.getInt("usuario_id"));
+                    agendamento.setServicoId(rs.getInt("servico_id"));
+                    agendamento.setData(rs.getDate("data").toLocalDate());
+                    agendamento.setStatus(StatusAgendamento.valueOf(rs.getString("status")));
+
+                    return agendamento;
+                } else {
+                    return null; // Agendamento não encontrado
+                }
+            }
         }
     }
 
